@@ -23,24 +23,18 @@
 
         .mobile-container {
             width: 100%;
-            /* background-color: white; */
             position: relative;
             z-index: 1;
         }
 
- */
+        .mobile-container {
+            background-color: transparent;
+        }
 
-/* Or if you want fully transparent: */
-.mobile-container {
-  background-color: transparent;
-}
-
-/* Your background layers only have the image, no background color */
-.background-layer {
-  background-color: transparent;
-  /* your other styles */
-}
-
+        .background-layer {
+            background-color: transparent;
+            /* your other styles */
+        }
 
         .background-layer {
             position: fixed;
@@ -62,6 +56,18 @@
             opacity: 1;
         }
 
+        .footer {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9em;
+  color: white;
+  background-color: transparent; /* or a light color if you want */
+  position: relative; /* so it stays below content */
+  margin-top: 40px; /* space from content */
+  user-select: none;
+}
+
+
 
         #bg-layer-1 {
             background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOC5-xcIh-cQd7blKXrBEhgnTAI7mezCJY45bhvYD9UIX5d99vMZdpZtI2ELbNToFPfJnVIlP0__3TOmJkNn4JTOSTI_XeNdCkduaAy9vWn5FZ_2XzVKtv9rwiu6idZaGDQ5Ipi-l2fi-NKMhLPgZnU=w1488-h1984-s-no-gm?authuser=1');
@@ -76,8 +82,8 @@
         }
 
         #bg-layer-4 {
-            background-color: #F5E8C7;
-            top: 300vh;
+            background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBpcTc5NjJwc2syZmp5Zjk4NDUxYXh5eTBuZnZuemZwem5iYXNqZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hiexP3PVqZzOGx1GRQ/giphy.gif');
+          
         }
 
         .section {
@@ -92,6 +98,16 @@
             align-items: center;
             justify-content: center;
             color: white;
+        }
+
+        .hero>div {
+            position: relative;
+            top: -200px;
+        }
+
+        .hero h1,
+        .hero p {
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
 
         .hero h1 {
@@ -128,7 +144,7 @@
 
         .countdown {
             font-size: 1.3em;
-            color: #d4a017;
+            color: white;
         }
 
         .rsvp input,
@@ -143,6 +159,7 @@
         .love-story {
             background: rgba(255, 250, 240, 0.9);
             padding: 20px;
+            min-height: 20vh;
         }
 
         /* Optional scale-down on larger screens */
@@ -201,7 +218,7 @@
                     <p><strong>Location:</strong> Holy Mother of God Cathedral Church</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2389.316357333377!2d44.588250465218884!3d40.18206021258736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa39b737e6791%3A0x1d5c8eac4b085e9b!2sHoly%20Mother%20of%20God%20Cathedral%20Church!5e0!3m2!1sen!2sam!4v1751697130740!5m2!1sen!2sam"
-                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -214,7 +231,7 @@
                     <p><strong>Location:</strong> Hatis Hall, Aramus Village</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.5429644714161!2d44.671424654275505!3d40.25263185966855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a9f9255c52f03%3A0xd0a1a8ced730f8ba!2sHatis%20Hall!5e0!3m2!1sen!2sam!4v1751697551039!5m2!1sen!2sam"
-                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -224,13 +241,6 @@
                 <p id="countdown-timer">Loading...</p>
             </div>
 
-            <div class="section rsvp">
-                <h2>RSVP</h2>
-                <input type="text" id="name" placeholder="Your Name" />
-                <input type="email" id="email" placeholder="Your Email" />
-                <button onclick="handleRSVP()">Submit RSVP</button>
-                <p id="rsvp-message"></p>
-            </div>
 
             <div class="section love-story">
                 <h2>Our Love Story</h2>
@@ -239,7 +249,12 @@
                 </p>
             </div>
         </div>
+        <footer class="footer">
+            <p>© 2025 Khoren & Monica. All rights reserved.</p>
+          </footer>
     </div>
+
+      
     <script>
         // Load YouTube IFrame API
         var tag = document.createElement('script');
