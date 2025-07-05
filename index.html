@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khoren & Monica Wedding Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .background-layer.active {
+            opacity: 1;
+        }
+
+        #bg-layer-1 {
+            background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPyUucwfpGLbSw7DWcDUETQgOb9EDPRTCPN_vWG8triV563xd0bSK8UU_jY9GnFhAVUsgq1I83PGZFCL4CbxlgtzNbKq9YX_s3Uummi58pfzIpRzw0ZtxMhfIbfynST0SqFvXceOJp-6WD1wClfQMLb=w1488-h1984-s-no-gm?authuser=0');
+        }
+
+        #bg-layer-2 {
+            background-image: url('https://lh3.googleusercontent.com/pw/AP1GczP0yK7Vh1WZbEeQLWw2rHPMmtGetsU0znIDSDc40glkdgpiOwplfCiAx0L5H878Et6acsqip3eHbVuokwwfTw8QIisCanMBXDarp89GVJmFm2J478JL1-mu0SmjeuRnLo09IC0p2faBKaSaQXDFkJs=w1582-h1782-s-no-gm?authuser=0');
+        }
+
+        #bg-layer-3 {
+            background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOl2IGMZKedWYlE-Bx9AmndIf9MJShwbV2kDWwXrjQ752TaQL5QYnjnrRgYFM1x9_K5gabVfyBATG-RIL20GvoBQsgQw8CYZ5EEnZABoHQlOnv0Ab4EHaxz8U5Xp2pBHktyBOROe51f3hV1X5ZXOaI=w828-h1354-s-no-gm?authuser=0');
+        }
+
+        #bg-layer-4 {
+            background-color: #F5E8C7;
+            top: 300vh;
+        }
+
+        .section {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5em, 5vw, 3em);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: clamp(1em, 2.5vw, 1.2em);
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #d4a017;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #b78c13;
+        }
+
+        .venue-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .venue-card h3 {
+            font-size: clamp(1.2em, 3vw, 1.5em);
+        }
+
+        .venue-card p {
+            font-size: clamp(0.9em, 2vw, 1em);
+        }
+
+        .countdown {
+            font-size: clamp(1.2em, 3vw, 1.5em);
+            color: #d4a017;
+        }
+
+        .rsvp {
+            margin-top: 20px;
+        }
+
+        .rsvp input,
+        .rsvp button {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: clamp(0.9em, 2.5vw, 1em);
+            box-sizing: border-box;
+        }
+
+        .love-story {
+            background: rgba(255, 250, 240, 0.9);
+            padding: 20px;
+        }
+
+        .love-story h2 {
+            font-size: clamp(1.5em, 4vw, 2em);
+        }
+
+        .love-story p {
+            font-size: clamp(0.9em, 2vw, 1.1em);
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 50px;
+            }
+
+            .rsvp input,
+            .rsvp button {
+                width: 45%;
+                display: inline-block;
+            }
+        }
+
+        /* Hide the iframe */
+        #youtube-player {
+            position: fixed;
+            width: 1px !important;
+            height: 1px !important;
+            left: -10000px;
+            top: 0;
+            display: block !important;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-layer-1" class="background-layer active"></div>
+    <div id="bg-layer-2" class="background-layer"></div>
+    <div id="bg-layer-3" class="background-layer"></div>
+    <div id="bg-layer-4" class="background-layer"></div>
+
+    <!-- YouTube IFrame with API -->
+    <div id="youtube-player"></div>
+
+    <div class="section hero">
+        <div>
+            <h1>Khoren & Monica<br>Wedding Day</h1>
+            <p>Join us in love and celebration!</p>
+            <button onclick="playYouTubeAudio()" style="background-color: rgba(0, 0, 255, 0.5); color: white; border: none; padding: 8px 16px; cursor: pointer;">
+                Play
+              </button>
+              
+              
+
+        </div>
+    </div>
+
+    <div class="section church-details">
+        <h2>Ceremony at Church</h2>
+        <div class="venue-card">
+            <h3>Ceremony Details</h3>
+            <p><strong>Time:</strong> September 27, 2025, 2:30 PM</p>
+            <p><strong>Location:</strong> Holy Mother of God Cathedral Church, 92 Melqonyan St, Yerevan 2227</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2389.316357333377!2d44.588250465218884!3d40.18206021258736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa39b737e6791%3A0x1d5c8eac4b085e9b!2sHoly%20Mother%20of%20God%20Cathedral%20Church!5e0!3m2!1sen!2sam!4v1751697130740!5m2!1sen!2sam"
+                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="section restaurant-details">
+        <h2>Reception at Restaurant</h2>
+        <div class="venue-card">
+            <h3>Reception Details</h3>
+            <p><strong>Time:</strong> September 27, 2025, 5:30 PM</p>
+            <p><strong>Location:</strong> Hatis Hall, Vilage Aramus</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.5429644714161!2d44.671424654275505!3d40.25263185966855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a9f9255c52f03%3A0xd0a1a8ced730f8ba!2sHatis%20Hall!5e0!3m2!1sen!2sam!4v1751697551039!5m2!1sen!2sam"
+                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="section countdown">
+        <h2>Countdown to Our Wedding</h2>
+        <p id="countdown-timer">Days: 0, Hours: 0, Minutes: 0, Seconds: 0</p>
+    </div>
+
+    <div class="section rsvp">
+        <h2>RSVP</h2>
+        <input type="text" id="name" placeholder="Your Name" />
+        <input type="text" id="email" placeholder="Your Email" />
+        <button onclick="handleRSVP()">Submit RSVP</button>
+        <p id="rsvp-message"></p>
+    </div>
+
+    <div class="section love-story">
+        <h2>Our Love Story</h2>
+        <p>Write a short story about how you met or your journey together. Add personal touches to make it special!</p>
+    </div>
+
+    <script>
+        // Load YouTube IFrame API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Global player variable
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '1',
+                width: '1',
+                videoId: '9INTqQk9Rv4',
+                playerVars: {
+                    'start': 8,
+                    'autoplay': 0,
+                    'mute': 1,
+                    'loop': 1,
+                    'playlist': '9INTqQk9Rv4',
+                    'controls': 0,
+                    'disablekb': 1,
+                    'iv_load_policy': 3,
+                    'modestbranding': 1,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            console.log("YouTube player ready");
+        }
+
+        function updateCountdown() {
+            const weddingDate = new Date("September 27, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown-timer").innerText =
+                distance < 0
+                    ? "The wedding has arrived!"
+                    : `Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function handleRSVP() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const msg = document.getElementById("rsvp-message");
+            if (name && email) {
+                msg.innerText = `Thank you, ${name}! Your RSVP has been noted.`;
+                document.getElementById("name").value = '';
+                document.getElementById("email").value = '';
+            } else {
+                msg.innerText = "Please enter your name and email.";
+            }
+        }
+
+        function playYouTubeAudio() {
+            const btn = document.querySelector('.hero button');
+            if (player && typeof player.playVideo === 'function') {
+                // Attempt to play muted first
+                player.playVideo();
+
+                // Unmute only after play succeeds
+                try {
+                    player.unMute();
+                } catch (e) {
+                    console.warn("Unmute failed, maybe mobile autoplay restrictions", e);
+                }
+
+                btn.style.display = 'none';
+                console.log("Attempting to play YouTube audio");
+            } else {
+                console.error("YouTube player not ready or not found");
+                alert("YouTube player not ready. Please try again or contact support.");
+            }
+        }
+
+
+
+        // Background scroll layer logic
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const layers = document.querySelectorAll('.background-layer');
+
+            layers.forEach(layer => layer.classList.remove('active'));
+            if (scrollPosition < viewportHeight) {
+                layers[0].classList.add('active');
+            } else if (scrollPosition < 2 * viewportHeight) {
+                layers[1].classList.add('active');
+            } else if (scrollPosition < 3 * viewportHeight) {
+                layers[2].classList.add('active');
+            } else {
+                layers[3].classList.add('active');
+            }
+        });
+
+        window.dispatchEvent(new Event('scroll'));
+    </script>
