@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile and tablet background optimization */
+@media (max-width: 768px) {
+  #home .absolute.inset-0 > div {
+    background-position: center 30% !important;
+    background-size: cover !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #home .absolute.inset-0 > div {
+    background-position: center 35% !important;
+  }
+}
+
+/* Ensure proper aspect ratio on very wide screens */
+@media (min-width: 1920px) {
+  #home .absolute.inset-0 > div {
+    background-position: center 20% !important;
+  }
+}
