@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true  # Changed to true
+  cancel-in-progress: true  # Ensures only the latest deployment runs
 
 jobs:
   deploy:
@@ -26,15 +26,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'  # Updated to a supported version (v18.18.0+ or v20)
       - name: Install dependencies
         run: npm install
       - name: Build project
         run: npm run build
+      - name: List files before upload
+        run: ls -la dist
+        working-directory: .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'  # Ensure this matches your build output
+          path: 'dist'  # Matches Vite's default output directory
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
