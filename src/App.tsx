@@ -39,7 +39,7 @@ function App() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url(https://lh3.googleusercontent.com/pw/AP1GczOC5-xcIh-cQd7blKXrBEhgnTAI7mezCJY45bhvYD9UIX5d99vMZdpZtI2ELbNToFPfJnVIlP0__3TOmJkNn4JTOSTI_XeNdCkduaAy9vWn5FZ_2XzVKtv9rwiu6idZaGDQ5Ipi-l2fi-NKMhLPgZnU=w1488-h1984-s-no-gm?authuser=1)',
+              'url(https://lh3.googleusercontent.com/pw/AP1GczMoM-jD1alm0cWBjs_D2dY3hNByGv1e05wY3wiGt6z7m1puik0c2bD1-tPsQ9VchLamq6M-ZfFV045ruUN1DxUcbl9UbAGTpRFIl0IVG9f6U-XRjSEKvG5cVK25E57eM1JKiQPH9LKx7pFOBLNp8dfM=w1488-h1984-s-no-gm?authuser=0)',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
