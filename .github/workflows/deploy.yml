@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true  # Ensures only the latest deployment runs
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -20,24 +20,31 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Updated to a supported version (v18.18.0+ or v20)
+          node-version: '20'
+          cache: 'npm'
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
       - name: Build project
         run: npm run build
+
       - name: List files before upload
         run: ls -la dist
-        working-directory: .
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'  # Matches Vite's default output directory
+          path: dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
