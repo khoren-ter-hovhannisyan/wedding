@@ -1,9 +1,0 @@
-{
-    "name": "Khoren & Monica - Wedding Invitation",
-    "short_name": "K&M Wedding",
-    "description": "Join us in celebrating our special day!",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#f5e1e6"
-  }
