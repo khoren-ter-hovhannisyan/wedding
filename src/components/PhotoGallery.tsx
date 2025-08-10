@@ -3,9 +3,9 @@ import { useLanguage } from '../contexts/LanguageContext.tsx';
 
 const samplePhotos = [
   'https://lh3.googleusercontent.com/pw/AP1GczOWH9_bfDzsfygbpdKjWT31oHjldwX8CgOppPulzwmRfvoFir_7QIDkzSZO1IGNCRk6_He88Ws3TlvDCXBb0AZv__Y2eZEpWYykO0Qd_PvmyLPe0IdEZ8ZMFv5s4fDMBqFTt4CVHFVH6WVJtvTdkj7h=w1440-h1385-s-no-gm?authuser=0',
-'https://lh3.googleusercontent.com/pw/AP1GczOHamzn9VY7GPupnMyAoLgcWi7XJHafJGTN5WjaJ37chPiSitmGt8dqOx8eGPbCOKaXP5H6zYR_DZ6nEb0DhhjC0AvGAVevxftCcdTbv9-7m6q5uXuotPy4fhU2vexGdZNryLQakvr6oiA6esSs6KH2=w1284-h1984-s-no-gm?authuser=0',  'https://lh3.googleusercontent.com/pw/AP1GczOS9qZvjyp5K6on_r5Wfhpd9NPqhCA3NGXbeZDmrdmyDz8WG4xXwSI8B0DRxtQQ5UVMXgpAdio9kGlelGRHsd4e2DPdcRuRYXdUgi_ldVE-N8-PPOTNJwCQLot2fMWihksG6-_k79qUWTnYLs_AhCwn=w1488-h1984-s-no-gm?authuser=0',
-'https://lh3.googleusercontent.com/pw/AP1GczPRoItsKvrbKved88AJp3KgQTaIWfIZgtOO0fGWtz8qIjHK5ailLAD_hn5SHsCGnYi1hWCgFSpFmI-SR6T95RU3B8B2ghwiIyT55MZ7kPNmifLmlpTgfMMmr-ewEkYndAPY1BGReBJ_t4Qk-HZf3CoB=w853-h1280-s-no-gm?authuser=0',  
-  'https://lh3.googleusercontent.com/pw/AP1GczODAJR6Sim94WZ6itepaolFG4mIlSrldUWv9H6b6NVFFE38cc7u-CeSWPN7YdseJV-JIyCaN3N22fV8xRtPIn5QqW7yT-0QFdsLsMh8uH1ckHN1QpSU2oLW86leWWFFPh8u9FI5G7r3BZsviBqfWAGV=w1138-h1984-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/AP1GczOHamzn9VY7GPupnMyAoLgcWi7XJHafJGTN5WjaJ37chPiSitmGt8dqOx8eGPbCOKaXP5H6zYR_DZ6nEb0DhhjC0AvGAVevxftCcdTbv9-7m6q5uXuotPy4fhU2vexGdZNryLQakvr6oiA6esSs6KH2=w1284-h1984-s-no-gm?authuser=0', 'https://lh3.googleusercontent.com/pw/AP1GczOS9qZvjyp5K6on_r5Wfhpd9NPqhCA3NGXbeZDmrdmyDz8WG4xXwSI8B0DRxtQQ5UVMXgpAdio9kGlelGRHsd4e2DPdcRuRYXdUgi_ldVE-N8-PPOTNJwCQLot2fMWihksG6-_k79qUWTnYLs_AhCwn=w1488-h1984-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/AP1GczPRoItsKvrbKved88AJp3KgQTaIWfIZgtOO0fGWtz8qIjHK5ailLAD_hn5SHsCGnYi1hWCgFSpFmI-SR6T95RU3B8B2ghwiIyT55MZ7kPNmifLmlpTgfMMmr-ewEkYndAPY1BGReBJ_t4Qk-HZf3CoB=w853-h1280-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/AP1GczP4ujnF970_e5iUUenJTYYjA9ts_Qeu7ELd-06QD4gKM3V3i76qc_yjCY7BKjD1QLdwd6zovB5P4G4YGnUKhBoWh2iOK_JQoa55WDizd8dEy8z2Htu9sb5ecZk6awqFVW14ECKIrHh5DiJ18Q0FCZdy=w1138-h1984-s-no-gm?authuser=0',
   'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzA0bjVlaGFmcTNtdzh4c3luYTVsZG8yc2NzZDdkNnkwYTN5aWlmaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Nf3vA12Ahej18cklao/giphy.gif',
 ];
 
@@ -23,10 +23,10 @@ export const PhotoGallery: React.FC = () => {
             {t('photos.subtitle')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {samplePhotos.map((photo, index) => (
-            <div 
+            <div
               key={index}
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >

@@ -1,11 +1,9 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext.tsx';
 
 export const WeddingCalendar: React.FC = () => {
   const { t } = useLanguage();
   // Wedding date: September 27, 2025
-  const weddingDate = new Date(2025, 8, 27); // Month is 0-indexed
   const currentMonth = 8; // September
   const currentYear = 2025;
   
@@ -26,10 +24,6 @@ export const WeddingCalendar: React.FC = () => {
     days.push(day);
   }
   
-  const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
   
   const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -41,16 +35,10 @@ export const WeddingCalendar: React.FC = () => {
       </div>
       
       {/* Calendar Header */}
-      <div className="flex items-center justify-between mb-6">
-        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-          <ChevronLeft size={20} className="text-navy-600" />
-        </button>
+      <div className="flex items-center justify-center mb-6">
         <h4 className="text-xl font-semibold text-navy-900">
           {t('calendar.september')} {currentYear}
         </h4>
-        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-          <ChevronRight size={20} className="text-navy-600" />
-        </button>
       </div>
       
       {/* Day Names */}
