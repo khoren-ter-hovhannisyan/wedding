@@ -22,10 +22,10 @@ function App() {
             <button onClick={() => scrollToSection('home')} className="text-navy-900 hover:text-rose-500 transition-colors">
               {t('nav.home')}
             </button>
-            <button onClick={() => scrollToSection('details')} className="text-navy-900 hover:text-rose-500 transition-colors">
+            <button onClick={() => scrollToSection('details')} className="mr-[5%] text-navy-900 hover:text-rose-500 transition-colors">
               {t('nav.details')}
             </button>
-            <button onClick={() => scrollToSection('photos')} className="text-navy-900 hover:text-rose-500 transition-colors">
+            <button onClick={() => scrollToSection('photos')} className="mr-[5%] text-navy-900 hover:text-rose-500 transition-colors">
               {t('nav.photos')}
             </button>
           </div>
