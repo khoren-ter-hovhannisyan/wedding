@@ -6,26 +6,30 @@ export const WeddingCalendar: React.FC = () => {
   // Wedding date: September 27, 2025
   const currentMonth = 8; // September
   const currentYear = 2025;
-  
-  // Get first day of the month and number of days
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+
+  // Get first day of the month (0=Sunday … 6=Saturday)
+  const jsFirstDay = new Date(currentYear, currentMonth, 1).getDay();
+
+  // Convert so week starts on Monday (0=Mon … 6=Sun)
+  const firstDayOfMonth = (jsFirstDay + 6) % 7;
+
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-  
+
   // Create array of days
-  const days = [];
-  
+  const days: (number | null)[] = [];
+
   // Add empty cells for days before the first day of the month
   for (let i = 0; i < firstDayOfMonth; i++) {
     days.push(null);
   }
-  
+
   // Add days of the month
   for (let day = 1; day <= daysInMonth; day++) {
     days.push(day);
   }
-  
-  
-  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  // Day names starting Monday
+  const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md mx-auto">
@@ -33,14 +37,14 @@ export const WeddingCalendar: React.FC = () => {
         <h3 className="text-2xl font-script text-navy-900 mb-2">{t('calendar.title')}</h3>
         <div className="w-16 h-1 bg-rose-400 mx-auto rounded-full"></div>
       </div>
-      
+
       {/* Calendar Header */}
       <div className="flex items-center justify-center mb-6">
         <h4 className="text-xl font-semibold text-navy-900">
           {t('calendar.september')} {currentYear}
         </h4>
       </div>
-      
+
       {/* Day Names */}
       <div className="grid grid-cols-7 gap-1 mb-2">
         {dayNames.map((dayName) => (
@@ -49,7 +53,7 @@ export const WeddingCalendar: React.FC = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Calendar Days */}
       <div className="grid grid-cols-7 gap-1">
         {days.map((day, index) => (
@@ -68,7 +72,7 @@ export const WeddingCalendar: React.FC = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Wedding Date Highlight */}
       <div className="mt-6 text-center">
         <div className="inline-flex items-center space-x-2 bg-rose-50 px-4 py-2 rounded-full">
