@@ -50,7 +50,7 @@ function App() {
             },
           }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
         
         <div className="relative z-10 min-h-screen flex items-center justify-center">
