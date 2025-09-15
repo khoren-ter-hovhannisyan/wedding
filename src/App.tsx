@@ -35,22 +35,21 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url(https://lh3.googleusercontent.com/pw/AP1GczP_umtVMne_Fao7NP4IIKmDT00w3-E4-LP2--_1e0tVDsynVEb_i-uZ5ZDpdCt9yCTCaClalYux0jJSbw7u_OIwsc2oLDNjiqZ6NcdqEIQHO3iqkF2y_fPfVi_QoB-v6E9otV29CanHBzfc9SeLc5Wk=w1322-h1984-s-no-gm?authuser=0)',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            height: '100vh', // Full viewport height
-            '@media (max-width: 640px)': { // Tailwind's sm breakpoint
-              backgroundSize: 'contain', // Switch to contain on mobile
-              backgroundPosition: 'top', // Adjust position for mobile
-            },
-          }}
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+      <div 
+  className="
+    absolute inset-0 
+    bg-no-repeat 
+    bg-cover sm:bg-contain  /* mobile uses contain */
+    bg-top sm:bg-top md:bg-center  /* top for mobile, center for larger */
+  "
+  style={{
+    backgroundImage:
+      "url(https://lh3.googleusercontent.com/pw/AP1GczP_umtVMne_Fao7NP4IIKmDT00w3-E4-LP2--_1e0tVDsynVEb_i-uZ5ZDpdCt9yCTCaClalYux0jJSbw7u_OIwsc2oLDNjiqZ6NcdqEIQHO3iqkF2y_fPfVi_QoB-v6E9otV29CanHBzfc9SeLc5Wk=w1322-h1984-s-no-gm?authuser=0)",
+  }}
+>
+  <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+
+
         </div>
         
         <div className="relative z-10 min-h-screen flex items-center justify-center">
